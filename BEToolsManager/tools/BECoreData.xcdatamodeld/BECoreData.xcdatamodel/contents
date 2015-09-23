@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TestTable" representedClassName="TestTable" syncable="YES">
+        <attribute name="test1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="test2" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TestTable1" representedClassName="TestTable1" syncable="YES"/>
+    <elements>
+        <element name="TestTable" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="TestTable1" positionX="-54" positionY="-9" width="128" height="45"/>
+    </elements>
+</model>
