@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AntherView.h"
+#import "NextViewController.h"
+
 
 
 @interface ViewController : UIViewController <antherViewDelegate>
@@ -15,6 +17,7 @@
     UIColor *viewColor;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabelA;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 
@@ -22,7 +25,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *view1;
 
+
 @property (assign,nonatomic) NSInteger a;
+
+- (IBAction)nextAc:(id)sender;
 
 @end
 

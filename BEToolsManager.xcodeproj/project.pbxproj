@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019A43141BB3FFFF001DDF97 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A43131BB3FFFF001DDF97 /* NextViewController.m */; };
 		C4AE1CA91BB0F5DA00981A33 /* BECoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4AE1CA71BB0F5DA00981A33 /* BECoreData.xcdatamodeld */; };
 		C4AE1CAC1BB0F66A00981A33 /* BECoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE1CAB1BB0F66A00981A33 /* BECoreData.m */; };
 		C4AE1CAF1BB0F84500981A33 /* TestTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE1CAE1BB0F84500981A33 /* TestTable.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		019A43121BB3FFFF001DDF97 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		019A43131BB3FFFF001DDF97 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		C4AE1CA81BB0F5DA00981A33 /* BECoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BECoreData.xcdatamodel; sourceTree = "<group>"; };
 		C4AE1CAA1BB0F66A00981A33 /* BECoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BECoreData.h; path = tools/BECoreData.h; sourceTree = "<group>"; };
 		C4AE1CAB1BB0F66A00981A33 /* BECoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BECoreData.m; path = tools/BECoreData.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				C4AE1CB81BB2442D00981A33 /* BETableViewController.m */,
 				C4AE1CBA1BB2466300981A33 /* EGORefreshTableHeaderView.h */,
 				C4AE1CBB1BB2466300981A33 /* EGORefreshTableHeaderView.m */,
+				019A43121BB3FFFF001DDF97 /* NextViewController.h */,
+				019A43131BB3FFFF001DDF97 /* NextViewController.m */,
 			);
 			path = BEToolsManager;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				C4AE1CB91BB2442D00981A33 /* BETableViewController.m in Sources */,
 				C4B933E01B6B16D800FE0F31 /* AntherView.m in Sources */,
 				C4B933961B6B0FDC00FE0F31 /* main.m in Sources */,
+				019A43141BB3FFFF001DDF97 /* NextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BEToolsManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -491,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BEToolsManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

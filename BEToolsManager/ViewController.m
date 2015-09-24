@@ -89,4 +89,28 @@
         self.view1.backgroundColor = [self valueForKey:@"viewColor"];
     }
 }
+- (IBAction)nextAc:(id)sender {
+//    a.learnBlock = ^(NSString *title)
+//    {
+//        NSLog(@"%@-----",title);
+//        return YES;
+//    };
+    
+    
+
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+   if([segue.identifier isEqualToString:@"nexta"])
+   {
+       NextViewController *nextV = segue.destinationViewController;
+       nextV.testT = ^(NSString *t)
+       {
+           NSLog(@"%@",t);
+           self.textLabelA.text = t;
+       };
+   }
+}
+
 @end

@@ -31,6 +31,64 @@
     self.tableViewTest.delegate = self;
     
     [self addRefreshView];
+  
+    [self loadDataByNewPOST];
+    [self loadDataByNetGET];
+}
+
+-(void)loadDataByNewPOST
+{
+    //异步的
+    // 1.创建请求
+    NSURL *url = [NSURL URLWithString:@"http://192.168.10.108:50002/follow_up"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    // 2.设置请求头
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    // 3.设置请求体
+    NSDictionary *json = @{
+                            @"patient_id"   : @"123",
+                            @"patient_name" : @"小老头",
+                            @"relationship" : @"还好"
+                          };
+    //  NSData --> NSDictionary
+    // NSDictionary --> NSData
+    NSData *data = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:nil];
+    request.HTTPBody = data;
+    // 4.发送请求
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSLog(@"%d", data.length);
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"respond:%@,dic:%@",response,dic);
+    }];
+}
+
+-(void)loadDataByNetGET
+{
+    
+    //**********GET*********//
+    //    1.设置请求路径
+    NSString *urlStr=[NSString stringWithFormat:@"http://192.168.10.108:50002/follow_up"];
+    NSURL *url=[NSURL URLWithString:urlStr];
+//
+//    //    2.创建请求对象
+   NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+//    NSURLResponse *response = nil;
+//    NSError *error = nil;
+//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//
+//    NSLog(@"%@",dic);
+
+    //**********异步请求GET
+    //异步链接(形式1,较少用)
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+       // self.imageView.image = [UIImage imageWithData:data];
+            // 解析
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@", dic);
+            }];
+    
 }
 
 -(void)addRefreshView
@@ -56,11 +114,8 @@
     }
     [self.tableViewTest reloadData];
     
-        [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableViewTest];
-        reloading = NO;
- 
-
-    
+    [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableViewTest];
+    reloading = NO;
 }
 
 #pragma mark - Table view data source
@@ -98,8 +153,22 @@
 {
     if(indexPath.row == self.dataArr.count)
     {
-        
+        [self loadMore];
     }
+}
+
+#pragma -mark 加载更多
+-(void)loadMore
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for(int i = 15; i < 30; i++)
+        {
+            [self.dataArr addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableViewTest reloadData];
+        });
+    });
 }
 
 #pragma mark - EGORefreshTableHeaderDelegate Methods
@@ -164,8 +233,6 @@
     //  model should call this when its done loading
     NSLog(@"stop loading");
     timer = nil;
-    
-    
 }
 
 
