@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01787ECC1BB63CA000DA6144 /* BEScrollAndPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01787EC91BB63CA000DA6144 /* BEScrollAndPageView.m */; };
+		01787ECD1BB63CA000DA6144 /* BEScrollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01787ECB1BB63CA000DA6144 /* BEScrollerViewController.m */; };
 		019A43141BB3FFFF001DDF97 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A43131BB3FFFF001DDF97 /* NextViewController.m */; };
 		C4AE1CA91BB0F5DA00981A33 /* BECoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4AE1CA71BB0F5DA00981A33 /* BECoreData.xcdatamodeld */; };
 		C4AE1CAC1BB0F66A00981A33 /* BECoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE1CAB1BB0F66A00981A33 /* BECoreData.m */; };
@@ -47,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01787EC81BB63CA000DA6144 /* BEScrollAndPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEScrollAndPageView.h; sourceTree = "<group>"; };
+		01787EC91BB63CA000DA6144 /* BEScrollAndPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEScrollAndPageView.m; sourceTree = "<group>"; };
+		01787ECA1BB63CA000DA6144 /* BEScrollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEScrollerViewController.h; sourceTree = "<group>"; };
+		01787ECB1BB63CA000DA6144 /* BEScrollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEScrollerViewController.m; sourceTree = "<group>"; };
 		019A43121BB3FFFF001DDF97 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		019A43131BB3FFFF001DDF97 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		C4AE1CA81BB0F5DA00981A33 /* BECoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BECoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 				C4AE1CBB1BB2466300981A33 /* EGORefreshTableHeaderView.m */,
 				019A43121BB3FFFF001DDF97 /* NextViewController.h */,
 				019A43131BB3FFFF001DDF97 /* NextViewController.m */,
+				01787EC81BB63CA000DA6144 /* BEScrollAndPageView.h */,
+				01787EC91BB63CA000DA6144 /* BEScrollAndPageView.m */,
+				01787ECA1BB63CA000DA6144 /* BEScrollerViewController.h */,
+				01787ECB1BB63CA000DA6144 /* BEScrollerViewController.m */,
 			);
 			path = BEToolsManager;
 			sourceTree = "<group>";
@@ -337,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B933E51B6B49BF00FE0F31 /* BEToolsSinglton.m in Sources */,
+				01787ECC1BB63CA000DA6144 /* BEScrollAndPageView.m in Sources */,
 				C4B9339C1B6B0FDC00FE0F31 /* ViewController.m in Sources */,
 				C4B933D81B6B143F00FE0F31 /* AFSecurityPolicy.m in Sources */,
 				C4B933991B6B0FDC00FE0F31 /* AppDelegate.m in Sources */,
@@ -356,6 +367,7 @@
 				C4B933DC1B6B143F00FE0F31 /* AFURLSessionManager.m in Sources */,
 				C4AE1CBC1BB2466300981A33 /* EGORefreshTableHeaderView.m in Sources */,
 				C4AE1CB91BB2442D00981A33 /* BETableViewController.m in Sources */,
+				01787ECD1BB63CA000DA6144 /* BEScrollerViewController.m in Sources */,
 				C4B933E01B6B16D800FE0F31 /* AntherView.m in Sources */,
 				C4B933961B6B0FDC00FE0F31 /* main.m in Sources */,
 				019A43141BB3FFFF001DDF97 /* NextViewController.m in Sources */,
