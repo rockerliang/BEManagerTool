@@ -22,8 +22,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
     self.dataArr = [NSMutableArray array];
-    for(int i = 0; i < 15;i ++)
+    for(int i = 0; i < 100;i ++)
     {
         [self.dataArr addObject:[NSString stringWithFormat:@"%d",i]];
     }
@@ -31,6 +32,8 @@
     self.tableViewTest.delegate = self;
     
     [self addRefreshView];
+    
+    
 }
 
 -(void)addRefreshView
@@ -75,6 +78,11 @@
     return self.dataArr.count + 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.f;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentity = @"UITableViewCell";
@@ -83,6 +91,21 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity];
     }
+   // cell.imageView.image = nil;
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSURL *url=[NSURL URLWithString:@"http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_1.jpg"];
+//        NSData *data=[NSData dataWithContentsOfURL:url];
+//        UIImage *image=[UIImage imageWithData:data];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.imageView.image = image;
+//        });
+//
+//    });
+    UIImageView *imgView1 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 0, 100, 100)];
+    [imgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_%d.jpg",indexPath.row]]];
+    [cell addSubview:imgView1];
+    
+   // [cell addSubview:imgView];
     if(indexPath.row == self.dataArr.count)
     {
         cell.textLabel.text = @"加载更多";
@@ -94,11 +117,17 @@
     return cell;
 }
 
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    cell.backgroundColor = [UIColor yellowColor];
+//}
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == self.dataArr.count)
+    if(indexPath.row != self.dataArr.count)
     {
-        
+        [self performSegueWithIdentifier:@"gcdpush" sender:nil];
     }
 }
 

@@ -88,11 +88,30 @@
                     </tableView>
                     <connections>
                         <outlet property="tableViewTest" destination="Cuv-sZ-vEY" id="XZw-Ef-eb0"/>
+                        <segue destination="aLx-0z-Is7" kind="show" identifier="gcdpush" id="2bU-t6-ino"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zej-ZR-ayl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995" y="366"/>
+            <point key="canvasLocation" x="1033" y="242"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qih-zr-cWb">
+            <objects>
+                <viewController id="aLx-0z-Is7" customClass="BEGCDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TJv-Qj-ErH"/>
+                        <viewControllerLayoutGuide type="bottom" id="T1k-Sl-uvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mR8-fl-guR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u1N-1v-9oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="171"/>
         </scene>
     </scenes>
 </document>

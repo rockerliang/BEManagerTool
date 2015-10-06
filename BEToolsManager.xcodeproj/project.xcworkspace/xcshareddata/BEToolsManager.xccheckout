@@ -7,34 +7,34 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B90E3E8F-D787-4FF5-B491-2FDAE2105DAE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>BEToolsManager</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3DE05D65D3C310523D40B9646B6CA4D34D7F695A</key>
-		<string>github.com:rockerliang/MyTools.git</string>
+		<key>7C5728E2E0FE2414FBBBD2323EF9A9D7D13DAC03</key>
+		<string>https://github.com/rockerliang/BEManagerTool.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BEToolsManager.xcodeproj/project.xcworkspace</string>
+	<string>BEToolsManager.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3DE05D65D3C310523D40B9646B6CA4D34D7F695A</key>
+		<key>7C5728E2E0FE2414FBBBD2323EF9A9D7D13DAC03</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:rockerliang/MyTools.git</string>
+	<string>https://github.com/rockerliang/BEManagerTool.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3DE05D65D3C310523D40B9646B6CA4D34D7F695A</string>
+	<string>7C5728E2E0FE2414FBBBD2323EF9A9D7D13DAC03</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3DE05D65D3C310523D40B9646B6CA4D34D7F695A</string>
+			<string>7C5728E2E0FE2414FBBBD2323EF9A9D7D13DAC03</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BEToolsManager</string>
+			<string>BEManagerTool</string>
 		</dict>
 	</array>
 </dict>

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
+#import "UIImageView+WebCache.h"
 
 @interface BETableViewController : UITableViewController<EGORefreshTableHeaderDelegate,UIScrollViewDelegate>
 {
     EGORefreshTableHeaderView *refreshHeaderView;
     BOOL reloading;
     NSTimer *timer;
+    UIImageView *imgView;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableViewTest;
