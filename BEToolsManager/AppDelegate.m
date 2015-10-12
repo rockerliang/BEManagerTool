@@ -19,20 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.i
-    isOut = NO;
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    NSString *cache = [[BEToolsSinglton getInstance] getCaches];
-    
-    BOOL isHasfile = [[BEToolsSinglton getInstance] isExistsForTargetFile:[NSString stringWithFormat:@"%@/%@",cache,@"aa.txt"]];
-    if(isHasfile)
-    {
-        [self gotoMain];
-    }else
-    {
-        [self gotoYindao];
-    }
+//    isOut = NO;
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    NSString *cache = [[BEToolsSinglton getInstance] getCaches];
+//    
+//    BOOL isHasfile = [[BEToolsSinglton getInstance] isExistsForTargetFile:[NSString stringWithFormat:@"%@/%@",cache,@"aa.txt"]];
+//    if(isHasfile)
+//    {
+//        [self gotoMain];
+//    }else
+//    {
+//        [self gotoYindao];
+//    }
     return YES;
 }
 
@@ -53,6 +53,7 @@
     ViewController *cont = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = cont;
+    [self.window makeKeyAndVisible];
 }
 -(void)gotoYindao
 {
@@ -124,7 +125,7 @@
             
         }completion:^(BOOL finished) {
             [scrollView  removeFromSuperview];//将scrollView移除
-            [self gotoMain];//进入主界面
+            [self gotoMain];
             
         } ];
 

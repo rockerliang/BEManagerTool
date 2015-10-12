@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AntherView.h"
+#import "NextViewController.h"
+#import "BEAnimationViewController.h"
+
 
 
 @interface ViewController : UIViewController <antherViewDelegate>
@@ -15,6 +18,7 @@
     UIColor *viewColor;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabelA;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 
@@ -22,7 +26,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *view1;
 
+- (IBAction)annimationAction:(id)sender;
+
 @property (assign,nonatomic) NSInteger a;
+
+- (IBAction)nextAc:(id)sender;
 
 @end
 

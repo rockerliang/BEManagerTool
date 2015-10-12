@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self testHttp];
 
      a = [[AntherView alloc] init];
     a.frame = CGRectMake(100, 100, 100, 100);
@@ -44,6 +45,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 -(void)todoSomething
 {
@@ -88,5 +90,60 @@
     {
         self.view1.backgroundColor = [self valueForKey:@"viewColor"];
     }
+}
+- (IBAction)nextAc:(id)sender {
+//    a.learnBlock = ^(NSString *title)
+//    {
+//        NSLog(@"%@-----",title);
+//        return YES;
+//    };
+    
+    
+
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+   if([segue.identifier isEqualToString:@"nexta"])
+   {
+       NextViewController *nextV = segue.destinationViewController;
+       nextV.testT = ^(NSString *t)
+       {
+           NSLog(@"%@",t);
+           self.textLabelA.text = t;
+       };
+   }
+}
+
+
+-(void)testHttp
+{
+    [HttpClient GET:@"http://192.168.10.113:5002/templates" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *arr1 = responseObject[@"_items"];
+        NSDictionary *dic1 = arr1[0];
+        NSDictionary *aa = dic1[@"CT"];
+        NSArray *arr3 = aa[@"颈部"];
+        NSArray *arr2 = dic1[@"CT"];
+        for(NSString *dic in arr2)
+        {
+            NSLog(@"%@",dic);
+        }
+        for(NSString *bb in arr3)
+        {
+            NSLog(@"%@",bb);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+
+
+
+
+- (IBAction)annimationAction:(id)sender {
+    BEAnimationViewController *aninController = [[BEAnimationViewController alloc] init];
+    [self presentViewController:aninController animated:YES completion:nil];
 }
 @end
